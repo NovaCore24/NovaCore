@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NovaCore — Los Santos Development</title>
-  <meta name="description" content="NovaCore Los Santos Development Studio — premium FiveM systems." />
+  <meta name="description" content="NovaCore Los Santos Development Studio — premium, modern, FPS-friendly FiveM systems." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,43 +13,131 @@
 
   <header class="nav">
     <div class="brand">
-      <div class="logo">N</div>
-      <div>
-        <h2>NovaCore</h2>
-        <p>Los Santos Development</p>
+      <!-- LOGO (SVG) -->
+      <div class="logoBox" aria-label="NovaCore Logo">
+        <svg viewBox="0 0 64 64" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2B7CFF"/>
+              <stop offset="1" stop-color="#00D7FF"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 6c12.15 0 22 9.85 22 22 0 12.15-9.85 30-22 30S10 40.15 10 28C10 15.85 19.85 6 32 6Z" fill="url(#g)" opacity="0.95"/>
+          <path d="M22 40V22l20 18V22" stroke="#061426" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="brandText">
+        <div class="name">NovaCore</div>
+        <div class="tag">Los Santos Development</div>
       </div>
     </div>
 
-    <a class="btn" href="DISCORD_LINKIN_BURAYA" target="_blank">Discord</a>
+    <nav class="navLinks">
+      <a href="#free">Free</a>
+      <a href="#premium">Premium</a>
+      <a href="#support">Support</a>
+    </nav>
+
+    <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Discord</a>
   </header>
 
   <main class="container">
     <section class="hero">
+      <p class="pill">LS Theme • Premium UI • FPS Friendly</p>
       <h1>NovaCore LS Development</h1>
-      <p>Premium • Modern • FPS Friendly FiveM Systems</p>
-      <a class="btn big" href="DISCORD_LINKIN_BURAYA" target="_blank">Join Discord</a>
-    </section>
-
-    <section class="cards">
-      <div class="card">
-        <h3>Admin Panel</h3>
-        <p>Modern LS style UI with clean design.</p>
-      </div>
-
-      <div class="card">
-        <h3>RP Systems</h3>
-        <p>Optimized scripts for smooth gameplay.</p>
-      </div>
-
-      <div class="card">
-        <h3>Utilities</h3>
-        <p>Small tools that improve server quality.</p>
+      <p class="sub">Modern, clean and optimized FiveM systems. Easy setup, pro support.</p>
+      <div class="ctaRow">
+        <a class="btn big" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Join Discord</a>
+        <a class="btn big ghost" href="#premium">View Premium</a>
       </div>
     </section>
+
+    <!-- ✅ ÜCRETSİZ -->
+    <section id="free" class="section">
+      <div class="sectionHead">
+        <h2>Ücretsiz Scriptler</h2>
+        <p>Topluluğa hediye — stabil, temiz, kolay kurulum.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Free: Simple /help UI</h3>
+          <p>Sunucu komutlarını gösteren basit, şık bir UI.</p>
+          <div class="meta"><span>Free</span><span>UI</span><span>Light</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
+        </article>
+
+        <article class="card">
+          <h3>Free: Vehicle Cleanup</h3>
+          <p>Belirli aralıklarla map temizliği, FPS dostu.</p>
+          <div class="meta"><span>Free</span><span>Utility</span><span>FPS</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
+        </article>
+
+        <article class="card">
+          <h3>Free: Basic Logs</h3>
+          <p>Basit log sistemi (join/leave/command).</p>
+          <div class="meta"><span>Free</span><span>Logs</span><span>Stable</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ ÜCRETLİ -->
+    <section id="premium" class="section">
+      <div class="sectionHead">
+        <h2>Ücretli Scriptler</h2>
+        <p>Premium sistemler — destek + güncelleme + temiz UI.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card premium">
+          <h3>Premium: Admin Panel</h3>
+          <p>Modern LS UI, hızlı işlemler, loglar, ticket destek.</p>
+          <div class="meta"><span>Premium</span><span>UI</span><span>Tools</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+        </article>
+
+        <article class="card premium">
+          <h3>Premium: RP Systems</h3>
+          <p>İş/aktivite sistemleri, optimize ve config kolay.</p>
+          <div class="meta"><span>Premium</span><span>RP</span><span>Config</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+        </article>
+
+        <article class="card premium">
+          <h3>Premium: Utilities Pack</h3>
+          <p>Sunucu kalitesini artıran küçük ama güçlü araçlar.</p>
+          <div class="meta"><span>Premium</span><span>QoL</span><span>Stable</span></div>
+          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ SUPPORT -->
+    <section id="support" class="section">
+      <div class="sectionHead">
+        <h2>Support</h2>
+        <p>Kurulum, hata çözümü ve satın alma için Discord ticket.</p>
+      </div>
+
+      <div class="supportBox">
+        <div>
+          <div class="supportTitle">NovaCore Support</div>
+          <div class="supportText">Discord’a gir → ticket aç → hızlı dönüş.</div>
+        </div>
+        <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Open Discord</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> NovaCore — Los Santos Development
+    </footer>
   </main>
 
-  <footer>
-    © 2026 NovaCore — Los Santos Development
-  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
