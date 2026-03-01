@@ -13,7 +13,6 @@
 
   <header class="nav">
     <div class="brand">
-      <!-- LOGO (SVG) -->
       <div class="logoBox" aria-label="NovaCore Logo">
         <svg viewBox="0 0 64 64" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -36,6 +35,7 @@
     <nav class="navLinks">
       <a href="#free">Free</a>
       <a href="#premium">Premium</a>
+      <a href="#ticket">Ticket</a>
       <a href="#support">Support</a>
     </nav>
 
@@ -47,6 +47,7 @@
       <p class="pill">LS Theme • Premium UI • FPS Friendly</p>
       <h1>NovaCore LS Development</h1>
       <p class="sub">Modern, clean and optimized FiveM systems. Easy setup, pro support.</p>
+
       <div class="ctaRow">
         <a class="btn big" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Join Discord</a>
         <a class="btn big ghost" href="#premium">View Premium</a>
@@ -96,22 +97,45 @@
           <h3>Premium: Admin Panel</h3>
           <p>Modern LS UI, hızlı işlemler, loglar, ticket destek.</p>
           <div class="meta"><span>Premium</span><span>UI</span><span>Tools</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+          <a class="miniBtn" href="#" data-panel="admin">Detayları Gör</a>
         </article>
 
         <article class="card premium">
           <h3>Premium: RP Systems</h3>
           <p>İş/aktivite sistemleri, optimize ve config kolay.</p>
           <div class="meta"><span>Premium</span><span>RP</span><span>Config</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+          <a class="miniBtn" href="#" data-panel="rp">Detayları Gör</a>
         </article>
 
         <article class="card premium">
           <h3>Premium: Utilities Pack</h3>
           <p>Sunucu kalitesini artıran küçük ama güçlü araçlar.</p>
           <div class="meta"><span>Premium</span><span>QoL</span><span>Stable</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Fiyat & Satın Alma</a>
+          <a class="miniBtn" href="#" data-panel="util">Detayları Gör</a>
         </article>
+      </div>
+    </section>
+
+    <!-- ✅ TICKET -->
+    <section id="ticket" class="section">
+      <div class="sectionHead">
+        <h2>Ticket Aç</h2>
+        <p>Kurulum / hata / satın alma için ticket aç. 30 saniye sürer.</p>
+      </div>
+
+      <div class="ticketBox">
+        <ol class="steps">
+          <li><b>Discord’a gir</b></li>
+          <li><b>#ticket-olustur</b> kanalını aç</li>
+          <li><b>Create Ticket</b> butonuna bas</li>
+        </ol>
+
+        <div class="ticketActions">
+          <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Discord’a Git</a>
+          <button class="btn ghost" id="copyTicket" type="button">/ticket</button>
+        </div>
+
+        <div class="note" id="copyNote">Kopyalandı ✅ Discord’da chat’e yapıştır.</div>
       </div>
     </section>
 
@@ -136,8 +160,114 @@
     </footer>
   </main>
 
+  <!-- ✅ POPUP PANEL (ÜCRETLİ DETAY) -->
+  <div id="premiumPanel" class="popup" aria-hidden="true">
+    <div class="popupContent" role="dialog" aria-modal="true" aria-labelledby="ppTitle">
+      <button class="closeBtn" id="closePanelBtn" type="button" aria-label="Kapat">✖</button>
+
+      <h2 id="ppTitle">Premium Script</h2>
+      <p id="ppDesc" class="ppDesc">Detaylar burada.</p>
+
+      <div class="popupCards" id="ppFeatures"></div>
+
+      <div class="popupActions">
+        <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Satın Al (Discord)</a>
+        <button class="btn ghost" id="closePanelBtn2" type="button">Kapat</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // yıl
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // /ticket kopyala
+    const copyBtn = document.getElementById("copyTicket");
+    const copyNote = document.getElementById("copyNote");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("/ticket");
+          copyNote.style.display = "block";
+          setTimeout(() => (copyNote.style.display = "none"), 1800);
+        } catch {
+          alert("Kopyalanmadı. Discord’da /ticket yazabilirsin.");
+        }
+      });
+    }
+
+    // popup data
+    const data = {
+      admin: {
+        title: "Premium: Admin Panel",
+        desc: "Modern LS UI + tools + logs + hızlı aksiyonlar.",
+        features: ["Player tools", "Teleport / actions", "Logs", "Clean UI", "FPS friendly"]
+      },
+      rp: {
+        title: "Premium: RP Systems",
+        desc: "Job & activity sistemleri, optimize ve kolay config.",
+        features: ["Jobs / Activities", "Config easy", "Optimized loops", "Clean UX", "Stable"]
+      },
+      util: {
+        title: "Premium: Utilities Pack",
+        desc: "Sunucu kalitesini artıran küçük ama güçlü araçlar.",
+        features: ["QoL tools", "Performance helpers", "Admin utilities", "Clean & stable", "Updates"]
+      }
+    };
+
+    const panel = document.getElementById("premiumPanel");
+    const ppTitle = document.getElementById("ppTitle");
+    const ppDesc = document.getElementById("ppDesc");
+    const ppFeatures = document.getElementById("ppFeatures");
+    const close1 = document.getElementById("closePanelBtn");
+    const close2 = document.getElementById("closePanelBtn2");
+
+    function openPanel(key){
+      const item = data[key] || data.admin;
+      ppTitle.textContent = item.title;
+      ppDesc.textContent = item.desc;
+
+      ppFeatures.innerHTML = "";
+      item.features.forEach(f => {
+        const div = document.createElement("div");
+        div.className = "popupCard";
+        div.textContent = f;
+        ppFeatures.appendChild(div);
+      });
+
+      panel.style.display = "flex";
+      panel.setAttribute("aria-hidden", "false");
+      close1.focus();
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePanel(){
+      panel.style.display = "none";
+      panel.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // premium butonları
+    document.querySelectorAll('[data-panel]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        openPanel(a.getAttribute("data-panel"));
+      });
+    });
+
+    // kapatma
+    close1.addEventListener("click", closePanel);
+    close2.addEventListener("click", closePanel);
+
+    // dışına tıklayınca kapat
+    panel.addEventListener("click", (e) => {
+      if (e.target === panel) closePanel();
+    });
+
+    // ESC ile kapat
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && panel.style.display === "flex") closePanel();
+    });
   </script>
 </body>
 </html>
