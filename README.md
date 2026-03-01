@@ -1,0 +1,2 @@
+# NovaCore
+FiveM Scripts
