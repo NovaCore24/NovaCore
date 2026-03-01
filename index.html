@@ -1,273 +1,175 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NovaCore — Los Santos Development</title>
-  <meta name="description" content="NovaCore Los Santos Development Studio — premium, modern, FPS-friendly FiveM systems." />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>NovaCore — Los Santos Development</title>
+
+<!-- SEO -->
+<meta name="description" content="NovaCore LS Development - Premium FiveM scripts, free scripts, LS themed systems and professional support." />
+<meta name="keywords" content="NovaCore, FiveM scripts, FiveM development, LS scripts, FiveM premium scripts, FiveM free scripts, Los Santos development" />
+<meta name="author" content="NovaCore Development" />
+
+<!-- Google Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NovaCore",
+  "url": "https://novacore24.github.io/NovaCore/",
+  "description": "NovaCore Los Santos Development - Premium FiveM scripts and systems.",
+  "sameAs": [
+    "https://discord.gg/KN7zYjkx"
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css" />
+
+<style>
+/* 🔥 INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background:#030712;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation:introFade 2.5s ease forwards;
+}
+.introLogo{
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#2B7CFF,#00D7FF);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:introZoom 2s ease;
+}
+@keyframes introZoom{
+  from{transform:scale(.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+@keyframes introFade{
+  0%,80%{opacity:1;}
+  100%{opacity:0;visibility:hidden;}
+}
+</style>
+
 </head>
 
 <body>
-  <div class="bg"></div>
 
-  <header class="nav">
-    <div class="brand">
-      <div class="logoBox" aria-label="NovaCore Logo">
-        <svg viewBox="0 0 64 64" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="g" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#2B7CFF"/>
-              <stop offset="1" stop-color="#00D7FF"/>
-            </linearGradient>
-          </defs>
-          <path d="M32 6c12.15 0 22 9.85 22 22 0 12.15-9.85 30-22 30S10 40.15 10 28C10 15.85 19.85 6 32 6Z" fill="url(#g)" opacity="0.95"/>
-          <path d="M22 40V22l20 18V22" stroke="#061426" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+<!-- INTRO -->
+<div id="intro">
+  <div class="introLogo">NovaCore</div>
+</div>
 
-      <div class="brandText">
-        <div class="name">NovaCore</div>
-        <div class="tag">Los Santos Development</div>
-      </div>
+<div class="bg"></div>
+
+<header class="nav">
+  <div class="brand">
+    <div class="logoBox">
+      <svg viewBox="0 0 64 64" width="28" height="28" fill="none">
+        <defs>
+          <linearGradient id="g" x1="10" y1="6" x2="54" y2="58">
+            <stop stop-color="#2B7CFF"/>
+            <stop offset="1" stop-color="#00D7FF"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 6c12 0 22 10 22 22s-10 30-22 30S10 40 10 28 20 6 32 6Z" fill="url(#g)"/>
+        <path d="M22 40V22l20 18V22" stroke="#061426" stroke-width="5"/>
+      </svg>
     </div>
 
-    <nav class="navLinks">
-      <a href="#free">Free</a>
-      <a href="#premium">Premium</a>
-      <a href="#ticket">Ticket</a>
-      <a href="#support">Support</a>
-    </nav>
-
-    <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Discord</a>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <p class="pill">LS Theme • Premium UI • FPS Friendly</p>
-      <h1>NovaCore LS Development</h1>
-      <p class="sub">Modern, clean and optimized FiveM systems. Easy setup, pro support.</p>
-
-      <div class="ctaRow">
-        <a class="btn big" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Join Discord</a>
-        <a class="btn big ghost" href="#premium">View Premium</a>
-      </div>
-    </section>
-
-    <!-- ✅ ÜCRETSİZ -->
-    <section id="free" class="section">
-      <div class="sectionHead">
-        <h2>Ücretsiz Scriptler</h2>
-        <p>Topluluğa hediye — stabil, temiz, kolay kurulum.</p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Free: Simple /help UI</h3>
-          <p>Sunucu komutlarını gösteren basit, şık bir UI.</p>
-          <div class="meta"><span>Free</span><span>UI</span><span>Light</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
-        </article>
-
-        <article class="card">
-          <h3>Free: Vehicle Cleanup</h3>
-          <p>Belirli aralıklarla map temizliği, FPS dostu.</p>
-          <div class="meta"><span>Free</span><span>Utility</span><span>FPS</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
-        </article>
-
-        <article class="card">
-          <h3>Free: Basic Logs</h3>
-          <p>Basit log sistemi (join/leave/command).</p>
-          <div class="meta"><span>Free</span><span>Logs</span><span>Stable</span></div>
-          <a class="miniBtn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">İndir (Discord)</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ✅ ÜCRETLİ -->
-    <section id="premium" class="section">
-      <div class="sectionHead">
-        <h2>Ücretli Scriptler</h2>
-        <p>Premium sistemler — destek + güncelleme + temiz UI.</p>
-      </div>
-
-      <div class="cards">
-        <article class="card premium">
-          <h3>Premium: Admin Panel</h3>
-          <p>Modern LS UI, hızlı işlemler, loglar, ticket destek.</p>
-          <div class="meta"><span>Premium</span><span>UI</span><span>Tools</span></div>
-          <a class="miniBtn" href="#" data-panel="admin">Detayları Gör</a>
-        </article>
-
-        <article class="card premium">
-          <h3>Premium: RP Systems</h3>
-          <p>İş/aktivite sistemleri, optimize ve config kolay.</p>
-          <div class="meta"><span>Premium</span><span>RP</span><span>Config</span></div>
-          <a class="miniBtn" href="#" data-panel="rp">Detayları Gör</a>
-        </article>
-
-        <article class="card premium">
-          <h3>Premium: Utilities Pack</h3>
-          <p>Sunucu kalitesini artıran küçük ama güçlü araçlar.</p>
-          <div class="meta"><span>Premium</span><span>QoL</span><span>Stable</span></div>
-          <a class="miniBtn" href="#" data-panel="util">Detayları Gör</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ✅ TICKET -->
-    <section id="ticket" class="section">
-      <div class="sectionHead">
-        <h2>Ticket Aç</h2>
-        <p>Kurulum / hata / satın alma için ticket aç. 30 saniye sürer.</p>
-      </div>
-
-      <div class="ticketBox">
-        <ol class="steps">
-          <li><b>Discord’a gir</b></li>
-          <li><b>#ticket-olustur</b> kanalını aç</li>
-          <li><b>Create Ticket</b> butonuna bas</li>
-        </ol>
-
-        <div class="ticketActions">
-          <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Discord’a Git</a>
-          <button class="btn ghost" id="copyTicket" type="button">/ticket</button>
-        </div>
-
-        <div class="note" id="copyNote">Kopyalandı ✅ Discord’da chat’e yapıştır.</div>
-      </div>
-    </section>
-
-    <!-- ✅ SUPPORT -->
-    <section id="support" class="section">
-      <div class="sectionHead">
-        <h2>Support</h2>
-        <p>Kurulum, hata çözümü ve satın alma için Discord ticket.</p>
-      </div>
-
-      <div class="supportBox">
-        <div>
-          <div class="supportTitle">NovaCore Support</div>
-          <div class="supportText">Discord’a gir → ticket aç → hızlı dönüş.</div>
-        </div>
-        <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Open Discord</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © <span id="year"></span> NovaCore — Los Santos Development
-    </footer>
-  </main>
-
-  <!-- ✅ POPUP PANEL (ÜCRETLİ DETAY) -->
-  <div id="premiumPanel" class="popup" aria-hidden="true">
-    <div class="popupContent" role="dialog" aria-modal="true" aria-labelledby="ppTitle">
-      <button class="closeBtn" id="closePanelBtn" type="button" aria-label="Kapat">✖</button>
-
-      <h2 id="ppTitle">Premium Script</h2>
-      <p id="ppDesc" class="ppDesc">Detaylar burada.</p>
-
-      <div class="popupCards" id="ppFeatures"></div>
-
-      <div class="popupActions">
-        <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank" rel="noreferrer">Satın Al (Discord)</a>
-        <button class="btn ghost" id="closePanelBtn2" type="button">Kapat</button>
-      </div>
+    <div class="brandText">
+      <div class="name">NovaCore</div>
+      <div class="tag">Los Santos Development</div>
     </div>
   </div>
 
-  <script>
-    // yıl
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <nav class="navLinks">
+    <a href="free.html">Free</a>
+    <a href="premium.html">Premium</a>
+    <a href="#ticket">Ticket</a>
+    <a href="#support">Support</a>
+  </nav>
 
-    // /ticket kopyala
-    const copyBtn = document.getElementById("copyTicket");
-    const copyNote = document.getElementById("copyNote");
-    if (copyBtn) {
-      copyBtn.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText("/ticket");
-          copyNote.style.display = "block";
-          setTimeout(() => (copyNote.style.display = "none"), 1800);
-        } catch {
-          alert("Kopyalanmadı. Discord’da /ticket yazabilirsin.");
-        }
-      });
-    }
+  <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank">Discord</a>
+</header>
 
-    // popup data
-    const data = {
-      admin: {
-        title: "Premium: Admin Panel",
-        desc: "Modern LS UI + tools + logs + hızlı aksiyonlar.",
-        features: ["Player tools", "Teleport / actions", "Logs", "Clean UI", "FPS friendly"]
-      },
-      rp: {
-        title: "Premium: RP Systems",
-        desc: "Job & activity sistemleri, optimize ve kolay config.",
-        features: ["Jobs / Activities", "Config easy", "Optimized loops", "Clean UX", "Stable"]
-      },
-      util: {
-        title: "Premium: Utilities Pack",
-        desc: "Sunucu kalitesini artıran küçük ama güçlü araçlar.",
-        features: ["QoL tools", "Performance helpers", "Admin utilities", "Clean & stable", "Updates"]
-      }
-    };
+<main class="container">
 
-    const panel = document.getElementById("premiumPanel");
-    const ppTitle = document.getElementById("ppTitle");
-    const ppDesc = document.getElementById("ppDesc");
-    const ppFeatures = document.getElementById("ppFeatures");
-    const close1 = document.getElementById("closePanelBtn");
-    const close2 = document.getElementById("closePanelBtn2");
+<section class="hero">
+  <p class="pill">LS Theme • Premium UI • FPS Friendly</p>
+  <h1>NovaCore LS Development</h1>
+  <p class="sub">Modern, clean and optimized FiveM systems.</p>
 
-    function openPanel(key){
-      const item = data[key] || data.admin;
-      ppTitle.textContent = item.title;
-      ppDesc.textContent = item.desc;
+  <div class="ctaRow">
+    <a class="btn big" href="premium.html">View Premium</a>
+    <a class="btn big ghost" href="free.html">View Free</a>
+  </div>
+</section>
 
-      ppFeatures.innerHTML = "";
-      item.features.forEach(f => {
-        const div = document.createElement("div");
-        div.className = "popupCard";
-        div.textContent = f;
-        ppFeatures.appendChild(div);
-      });
+<!-- Ticket -->
+<section id="ticket" class="section">
+  <div class="sectionHead">
+    <h2>Ticket Aç</h2>
+    <p>Kurulum / hata / satın alma için ticket aç.</p>
+  </div>
 
-      panel.style.display = "flex";
-      panel.setAttribute("aria-hidden", "false");
-      close1.focus();
-      document.body.style.overflow = "hidden";
-    }
+  <div class="ticketBox">
+    <ol class="steps">
+      <li><b>Discord’a gir</b></li>
+      <li><b>#ticket-olustur</b> kanalını aç</li>
+      <li><b>Create Ticket</b> bas</li>
+    </ol>
 
-    function closePanel(){
-      panel.style.display = "none";
-      panel.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
+    <div class="ticketActions">
+      <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank">Discord’a Git</a>
+      <button class="btn ghost" id="copyTicket">/ticket</button>
+    </div>
 
-    // premium butonları
-    document.querySelectorAll('[data-panel]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        openPanel(a.getAttribute("data-panel"));
-      });
-    });
+    <div class="note" id="copyNote">Kopyalandı ✅ Discord’a yapıştır.</div>
+  </div>
+</section>
 
-    // kapatma
-    close1.addEventListener("click", closePanel);
-    close2.addEventListener("click", closePanel);
+<!-- Support -->
+<section id="support" class="section">
+  <div class="sectionHead">
+    <h2>Support</h2>
+    <p>Hızlı destek için ticket aç.</p>
+  </div>
 
-    // dışına tıklayınca kapat
-    panel.addEventListener("click", (e) => {
-      if (e.target === panel) closePanel();
-    });
+  <div class="supportBox">
+    <div>
+      <div class="supportTitle">NovaCore Support</div>
+      <div class="supportText">Discord → Ticket → Hızlı yardım</div>
+    </div>
+    <a class="btn" href="https://discord.gg/KN7zYjkx" target="_blank">Open Discord</a>
+  </div>
+</section>
 
-    // ESC ile kapat
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && panel.style.display === "flex") closePanel();
-    });
-  </script>
+<footer class="footer">
+  © <span id="year"></span> NovaCore — Los Santos Development
+</footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const copyBtn = document.getElementById("copyTicket");
+const copyNote = document.getElementById("copyNote");
+
+copyBtn.addEventListener("click", async () => {
+  await navigator.clipboard.writeText("/ticket");
+  copyNote.style.display="block";
+  setTimeout(()=>copyNote.style.display="none",1500);
+});
+</script>
+
 </body>
 </html>
